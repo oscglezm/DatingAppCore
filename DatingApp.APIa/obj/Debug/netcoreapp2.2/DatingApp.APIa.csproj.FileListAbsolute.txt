@@ -1,0 +1,14 @@
+C:\Angular_Projects\DatingApp\DatingApp.APIa\bin\Debug\netcoreapp2.2\DatingApp.APIa.deps.json
+C:\Angular_Projects\DatingApp\DatingApp.APIa\bin\Debug\netcoreapp2.2\DatingApp.APIa.runtimeconfig.json
+C:\Angular_Projects\DatingApp\DatingApp.APIa\bin\Debug\netcoreapp2.2\DatingApp.APIa.runtimeconfig.dev.json
+C:\Angular_Projects\DatingApp\DatingApp.APIa\bin\Debug\netcoreapp2.2\DatingApp.APIa.dll
+C:\Angular_Projects\DatingApp\DatingApp.APIa\bin\Debug\netcoreapp2.2\DatingApp.APIa.pdb
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.csproj.CoreCompileInputs.cache
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.RazorAssemblyInfo.cache
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.RazorAssemblyInfo.cs
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.AssemblyInfoInputs.cache
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.AssemblyInfo.cs
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.RazorTargetAssemblyInfo.cache
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.dll
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.pdb
+C:\Angular_Projects\DatingApp\DatingApp.APIa\obj\Debug\netcoreapp2.2\DatingApp.APIa.csprojAssemblyReference.cache
