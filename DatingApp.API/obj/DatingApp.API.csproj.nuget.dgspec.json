@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Angular_Projects\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
+    "C:\\Angular_Projects\\RemoteDatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
   },
   "projects": {
-    "C:\\Angular_Projects\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {
+    "C:\\Angular_Projects\\RemoteDatingApp\\DatingApp.API\\DatingApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Angular_Projects\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "projectUniqueName": "C:\\Angular_Projects\\RemoteDatingApp\\DatingApp.API\\DatingApp.API.csproj",
         "projectName": "DatingApp.API",
-        "projectPath": "C:\\Angular_Projects\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
-        "packagesPath": "C:\\Users\\e321352\\.nuget\\packages\\",
-        "outputPath": "C:\\Angular_Projects\\DatingApp\\DatingApp.API\\obj\\",
+        "projectPath": "C:\\Angular_Projects\\RemoteDatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
+        "outputPath": "C:\\Angular_Projects\\RemoteDatingApp\\DatingApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\e321352\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Oscar\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
