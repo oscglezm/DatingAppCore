@@ -1,7 +1,8 @@
+import { ErrorInterceptor } from './_services/error.interceptor';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent} from './nav/nav.component';
@@ -21,7 +22,13 @@ import { HomeComponent } from './home/home.component';
       FormsModule,
       HttpClientModule  // Addreference\\r\\nFormsModule
    ],
-   providers: [],
+   providers: [
+     {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+      }, 
+   ],
    bootstrap: [
       AppComponent
    ]
