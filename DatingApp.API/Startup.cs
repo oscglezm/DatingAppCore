@@ -9,9 +9,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Net;
+
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helpers;
+
 
 namespace DatingApp.API
 {
@@ -29,11 +31,17 @@ namespace DatingApp.API
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                 .AddJsonOptions( opt =>  //Fix the Loop Handling between FK and PK  on User and Photo classes
+                {
+                    opt.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
 
             services.AddCors(); // Enable Cross-Origin Requests (CORS) 
 
             services.AddScoped<IAuthRepository,AuthRepository>(); // Scoped objects are the same within a request, but different across different requests.
+            services.AddScoped<IDatingRepository, DatingRepository>(); 
 
                //setup Token Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -69,6 +77,9 @@ namespace DatingApp.API
                         }
                     });
                 });
+
+               
+
             }
 
             //app.UseHttpsRedirection();

@@ -15,5 +15,15 @@ namespace DatingApp.APIa.Helpers
             response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
 
+        public static int  CalculateAge(this DateTime TheDateTime)
+        {
+            var age = DateTime.Today.Year - TheDateTime.Year;
+
+            if (TheDateTime.AddYears(age) > DateTime.Today)
+                age--;
+
+            return age;
+        }
+
     }
 }

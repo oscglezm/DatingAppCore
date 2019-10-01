@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { RegisterComponent } from './../register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,14 +11,14 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  baseUrl = 'http://localhost:5001/api/auth';
+  baseUrl =  environment.apiUrl + 'auth/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
 constructor(private http: HttpClient) { }
 
   login(model: any){
-    return this.http.post(this.baseUrl + '/login', model)
+    return this.http.post(this.baseUrl + 'login', model)
     .pipe(
       map((response: any) => {
         const user = response;
@@ -31,7 +32,7 @@ constructor(private http: HttpClient) { }
   }
 
   register(model: any) {
-    return this.http.post(this.baseUrl + '/register', model);
+    return this.http.post(this.baseUrl + 'register', model);
   }
 
   loggedIn() {

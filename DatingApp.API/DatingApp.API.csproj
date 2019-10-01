@@ -6,10 +6,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App"/>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6"/>
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.5.0"/>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0"/>
     <PackageReference Include="System.Globalization" Version="4.3.0"/>
-    
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
   </ItemGroup>
 </Project>

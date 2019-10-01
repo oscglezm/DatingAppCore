@@ -35,8 +35,5 @@ namespace DatingApp.API.Models
 
         public ICollection<Photo> Photos { get; set; }
 
-
-
-
     }
 }

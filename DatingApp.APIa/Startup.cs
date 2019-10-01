@@ -13,6 +13,7 @@ using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.APIa.Helpers;
+using AutoMapper;
 
 namespace DatingApp.APIa
 {
@@ -30,11 +31,18 @@ namespace DatingApp.APIa
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))); //get connection string using sqlite from appsetting.json
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions( opt =>  //Fix the Loop Handling between FK and PK 
+                {
+                    opt.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
 
             services.AddCors(); // Enable Cross-Origin Requests (CORS) 
+            services.AddAutoMapper(typeof(DatingRepository).Assembly);//Add AutoMapper and the class to use it.
 
             services.AddScoped<IAuthRepository, AuthRepository>(); // Scoped objects are the same within a request, but different across different requests.
+            services.AddScoped<IDatingRepository, DatingRepository>(); 
 
             //setup Token Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -80,3 +88,4 @@ namespace DatingApp.APIa
         }
     }
 }
+ 
