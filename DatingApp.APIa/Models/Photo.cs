@@ -1,4 +1,6 @@
-﻿namespace DatingApp.APIa.Models
+﻿using System;
+
+namespace DatingApp.APIa.Models
 {
     public class Photo
     {
@@ -7,6 +9,10 @@
         public string Url { get; set; }
 
         public string Description { get; set; }
+
+        public DateTime? DateAdded { get; set; }
+
+        public string PublicID { get; set; }
 
         public bool IsMain { get; set; }
 

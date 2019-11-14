@@ -1,8 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../_models/user';
+import { PaginatedResult } from '../_models/pagination';
 
 /*
 const httpOptions = {
@@ -22,11 +24,28 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
+    
+    const PaginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
+
+
+
     return this.http.get<User[]>(this.baseUrl + 'users');
   }
 
   getUser(id): Observable<User>{
     return this.http.get<User>(this.baseUrl + 'users/' + id);
+  }
+
+  updateUser(id: number, user: User){
+    return this.http.put(this.baseUrl + 'users/' + id, user);
+  }
+
+  setMainPhoto(userId: number, id: number) {
+    return this.http.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {});
+  }
+
+  deletePhoto( userId: number, id: number) {
+    return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }
 
 }

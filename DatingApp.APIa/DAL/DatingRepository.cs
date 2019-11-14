@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using DatingApp.APIa.Helpers;
 using DatingApp.APIa.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +27,18 @@ namespace DatingApp.APIa.DAL
             context.Remove(entity);
         }
 
+        public async Task<Photo> GetMainPhotoForUser(int userId)
+        {
+            return await context.Photos.Where(x => x.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+        }
+
+        public async Task<Photo> GetPhoto(int id)
+        {
+            var photo = await context.Photos.FirstOrDefaultAsync(x => x.Id == id);
+
+            return photo;
+        }
+
         public async Task<User> GetUser( int id)
         {
             var user = await context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
@@ -32,11 +46,11 @@ namespace DatingApp.APIa.DAL
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<PagedList<User>> GetUsers( UserParams userParams)
         {
-            var users = await context.Users.Include(p => p.Photos).ToListAsync();
+            var users = context.Users.Include(p => p.Photos);
 
-            return users;
+            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<bool> SaveAll()

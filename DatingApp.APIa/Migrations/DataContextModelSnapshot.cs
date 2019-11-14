@@ -21,9 +21,13 @@ namespace DatingApp.APIa.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DateAdded");
+
                     b.Property<string>("Description");
 
                     b.Property<bool>("IsMain");
+
+                    b.Property<string>("PublicID");
 
                     b.Property<string>("Url");
 

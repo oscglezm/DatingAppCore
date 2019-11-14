@@ -39,6 +39,7 @@ namespace DatingApp.APIa
                 });
 
             services.AddCors(); // Enable Cross-Origin Requests (CORS) 
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);//Add AutoMapper and the class to use it.
 
             services.AddScoped<IAuthRepository, AuthRepository>(); // Scoped objects are the same within a request, but different across different requests.
@@ -55,6 +56,8 @@ namespace DatingApp.APIa
                         ValidateAudience = false
                     };
                  });
+
+            services.AddScoped<LogUserActivity>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,7 +85,7 @@ namespace DatingApp.APIa
                 });
             }
 
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseAuthentication(); // Enable Auth
             app.UseMvc();
         }
